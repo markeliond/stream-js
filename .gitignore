@@ -38,8 +38,10 @@ secrets.*sh
 /.nyc_output/
 
 
-# Ignore lib directory (this is not in npmignore because it should be piublished)
-/lib/
+# @mark: Need to allow lib to be on git repo so I can use it directly from my fork
+#
+# # Ignore lib directory (this is not in npmignore because it should be piublished)
+# /lib/
 
 docs/
 
