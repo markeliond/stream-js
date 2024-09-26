@@ -1,6 +1,6 @@
 /// <reference types="node" />
 /// <reference types="node" />
-import AxiosProgressEvent from 'axios';
+import { AxiosProgressEvent } from 'axios';
 import { StreamClient } from './client';
 export declare class StreamFileStore {
     client: StreamClient;
@@ -15,7 +15,7 @@ export declare class StreamFileStore {
      * @param {function} [onUploadProgress] - browser only, Function that is called with upload progress
      * @return {Promise<FileUploadAPIResponse>}
      */
-    upload(uri: string | File | Buffer | NodeJS.ReadStream, name?: string, contentType?: string, onUploadProgress?: (progressEvent: typeof AxiosProgressEvent) => void): Promise<import("./client").FileUploadAPIResponse>;
+    upload(uri: string | File | Buffer | NodeJS.ReadStream, name?: string, contentType?: string, onUploadProgress?: (progressEvent: AxiosProgressEvent) => void): Promise<import("./client").FileUploadAPIResponse>;
     /**
      * delete an uploaded file
      * @link https://getstream.io/activity-feeds/docs/node/files_introduction/?language=js#delete

@@ -7,7 +7,7 @@ import * as http from 'http';
 import * as https from 'https';
 import * as axios from 'axios';
 import * as Faye from 'faye';
-import AxiosProgressEvent from 'axios';
+import { AxiosProgressEvent } from 'axios';
 import { Personalization } from './personalization';
 import { Collections } from './collections';
 import { StreamFileStore } from './files';
@@ -322,7 +322,7 @@ export declare class StreamClient<StreamFeedGenerics extends DefaultGenerics = D
     getFayeClient(timeout?: number): Faye.Client<RealTimeMessage<StreamFeedGenerics>>;
     handleResponse: <T>(response: axios.AxiosResponse<T, any>) => T;
     doAxiosRequest: <T>(method: axios.Method, options: AxiosConfig) => Promise<T>;
-    upload(url: string, uri: string | File | Buffer | NodeJS.ReadStream, name?: string, contentType?: string, onUploadProgress?: (progressEvent: typeof AxiosProgressEvent) => void): Promise<FileUploadAPIResponse>;
+    upload(url: string, uri: string | File | Buffer | NodeJS.ReadStream, name?: string, contentType?: string, onUploadProgress?: (progressEvent: AxiosProgressEvent) => void): Promise<FileUploadAPIResponse>;
     /**
      * Shorthand function for get request
      * @method get
