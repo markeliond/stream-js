@@ -3,7 +3,7 @@
     "name": "Thierry Schellenbach",
     "company": "Stream.io Inc"
   },
-  "name": "getstream",
+  "name": "@konect/getstream",
   "description": "The official low-level GetStream.io client for Node.js and the browser.",
   "main": "./lib/index.js",
   "module": "./lib/index.js",
@@ -13,6 +13,7 @@
   "license": "BSD-3-Clause",
   "version": "8.4.1",
   "scripts": {
+    "artifactregistry-login": "npx google-artifactregistry-auth",
     "changelog": "standard-version --release-as $VERSION --skip.tag --skip.commit --tag-prefix=v",
     "commitlinter": "commitlint",
     "transpile": "babel src --out-dir lib --extensions '.ts'",
@@ -31,7 +32,6 @@
     "test-cloud-local": "LOCAL=true mocha --require ./babel-register.js test/integration/cloud --timeout 40000 --ignore 'test/integration/cloud/{personalized_feed,files,images}.js'",
     "test-browser": "karma start karma.config.js",
     "prepare": "yarn run build",
-    "preversion": "yarn run test-unit-node",
     "version": "yarn run dist && yarn run build && git add dist",
     "postversion": "git push && git push --tags && npm publish"
   },
@@ -86,6 +86,7 @@
     "eslint-plugin-sonarjs": "^0.23.0",
     "eslint-plugin-typescript-sort-keys": "^3.1.0",
     "expect.js": "^0.3.1",
+    "google-artifactregistry-auth": "^3.1.2",
     "husky": "^8.0.3",
     "json-loader": "~0.5.7",
     "karma": "^6.3.9",
@@ -125,8 +126,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/GetStream/stream-js.git"
+    "url": "git+ssh@github.com:markeliond/stream-js.git"
   },
+  "private": true,
   "files": [
     "src",
     "dist",
